@@ -36,7 +36,22 @@ public interface GridBag {
 	
 	GridBag alignment(int alignment);
 	
+	/**
+	 * Automatizes the {@code JComponent#add(java.awt.Component, Object)} using
+	 * configured {@code GridBagConstraints} object.
+	 * 
+	 * @param element
+	 * 
+	 * @param panel
+	 * 
+	 * @see JComponent#add(java.awt.Component, Object)
+	 */
 	void add(JComponent element, JComponent panel);
 	
+	/**
+	 * Returns an configured instance of {@code GridBagConstraints}.
+	 * 
+	 * @return
+	 */
 	GridBagConstraints gridify();
 }

@@ -1,6 +1,7 @@
 package br.inf.carlos.swing.grid;
 
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 
 import javax.swing.JComponent;
 
@@ -19,7 +20,7 @@ public class Grid implements GridBag{
 		this.constraints = constraints;
 		
 		if(this.constraints == null){
-			throw new NullPointerException("You must inform an GridBagConstraints object when use private constructors.d");
+			throw new NullPointerException("You must inform an GridBagConstraints object when use private constructors.");
 		}
 	}
 
@@ -65,13 +66,27 @@ public class Grid implements GridBag{
 
 	@Override
 	public GridBagConstraints gridify() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.constraints;
 	}
 
 	@Override
 	public void add(JComponent element, JComponent panel) {
+		
+		if(!panel.getLayout().equals(GridBagLayout.class)){
+			throw new IllegalArgumentException("The panel component must use GridBagLayout as layout manager. Use panel.setLayout(new GridBagLayout()) to set.");
+		}
+		
+		if(element == null){
+			throw new NullPointerException("The element component could not be null.");
+		}
+		
+		if(element.equals(panel)){
+			throw new NullPointerException("The element could not be inserted at itself.");
+		}
+		
 		panel.add(element, this.constraints);
+		
+		this.constraints = new GridBagConstraints();
 	}
 	
 }
