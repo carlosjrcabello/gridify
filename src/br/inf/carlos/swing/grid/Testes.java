@@ -17,11 +17,6 @@ public class Testes {
 		
 		JPanel panel =  new JPanel(new GridBagLayout());
 		JButton bu = new JButton("champz");
-		JButton bu2 = new JButton("champz 2");
-		
-		grid.atLine(1).atColumn(1).alignment(GridBag.LEFT).withMargins(50, 10, -10, 10).add(bu2, panel);
-		
-		grid.atLine(0).atColumn(0).alignment(GridBag.LEFT).withMargins(10, 10, 10, 10).add(bu, panel);
 		
 		Collection<JComponent> buttons = new ArrayList<JComponent>(0);
 		
@@ -31,6 +26,9 @@ public class Testes {
 		}
 		
 		grid.atLine(2).atColumn(0).withMargins(10, 10, 10, 10).alignment(GridBag.LEFT).add(buttons, panel);
+		
+		grid.atLine(0).atColumn(0).withMargins(10, 10, 10, 10).add(new JButton("Fuu..."), panel);
+		grid.atLine(0).atColumn(1).colspan(buttons.size() -1).withMargins(10, 10, 10, 10).add(bu, panel);
 		
 		JFrame frame = new JFrame();
 

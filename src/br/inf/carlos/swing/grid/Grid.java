@@ -47,14 +47,20 @@ public class Grid implements GridBag{
 
 	@Override
 	public GridBag colspan(int cols) {
-		// TODO Auto-generated method stub
-		return null;
+		this.constraints.gridwidth = cols;
+		
+		Grid g = new Grid(constraints);
+		
+		return g;
 	}
 
 	@Override
 	public GridBag rowspan(int rows) {
-		// TODO Auto-generated method stub
-		return null;
+		this.constraints.gridheight = rows;
+		
+		Grid g = new Grid(constraints);
+		
+		return g;
 	}
 
 	@Override
