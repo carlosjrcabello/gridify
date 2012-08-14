@@ -2,6 +2,8 @@ package br.inf.carlos.swing.grid;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.util.Collection;
 
 import javax.swing.JComponent;
 
@@ -71,8 +73,7 @@ public class Grid implements GridBag{
 
 	@Override
 	public void add(JComponent element, JComponent panel) {
-		
-		if(!panel.getLayout().equals(GridBagLayout.class)){
+		if(!panel.getLayout().getClass().equals(GridBagLayout.class)){
 			throw new IllegalArgumentException("The panel component must use GridBagLayout as layout manager. Use panel.setLayout(new GridBagLayout()) to set.");
 		}
 		
@@ -87,6 +88,27 @@ public class Grid implements GridBag{
 		panel.add(element, this.constraints);
 		
 		this.constraints = new GridBagConstraints();
+	}
+
+	@Override
+	public GridBag withMargins(int top, int left, int bottom, int right) {
+		this.constraints.insets = new Insets(top, left, bottom, right);
+		
+		Grid g = new Grid(constraints);
+		
+		return g;
+	}
+
+	@Override
+	public void add(Collection<JComponent> elements, JComponent panel) {
+		System.out.println("column: " + this.constraints.gridx);
+		
+		int i = this.constraints.gridx;
+		for (JComponent element : elements) {
+			panel.add(element, this.constraints);
+			i++;
+			this.constraints.gridx = i;
+		}
 	}
 	
 }

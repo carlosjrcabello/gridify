@@ -1,6 +1,7 @@
 package br.inf.carlos.swing.grid;
 
 import java.awt.GridBagConstraints;
+import java.util.Collection;
 
 import javax.swing.JComponent;
 
@@ -37,6 +38,18 @@ public interface GridBag {
 	GridBag alignment(int alignment);
 	
 	/**
+	 * Sets the {@code Insets} object across the int parameters to
+	 * define of margins of selected elements.
+	 * 
+	 * @param top
+	 * @param left
+	 * @param bottom
+	 * @param right
+	 * @return
+	 */
+	GridBag withMargins(int top, int left, int bottom, int right);
+	
+	/**
 	 * Automatizes the {@code JComponent#add(java.awt.Component, Object)} using
 	 * configured {@code GridBagConstraints} object.
 	 * 
@@ -47,6 +60,8 @@ public interface GridBag {
 	 * @see JComponent#add(java.awt.Component, Object)
 	 */
 	void add(JComponent element, JComponent panel);
+	
+	void add(Collection<JComponent> elements, JComponent panel);
 	
 	/**
 	 * Returns an configured instance of {@code GridBagConstraints}.
