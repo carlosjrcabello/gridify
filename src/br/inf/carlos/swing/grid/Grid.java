@@ -9,16 +9,24 @@ public class Grid implements GridBag{
 	private GridBagConstraints constraints;
 	
 	public Grid(){
-		
+		if(this.constraints == null){
+			this.constraints = new GridBagConstraints();
+		}
 	}
 
 	private Grid(GridBagConstraints constraints) {
 		super();
 		this.constraints = constraints;
+		
+		if(this.constraints == null){
+			throw new NullPointerException("You must inform an GridBagConstraints object when use private constructors.d");
+		}
 	}
 
 	@Override
 	public GridBag atLine(int line) {
+		
+		this.constraints.gridy = line;
 		
 		Grid g = new Grid(constraints);
 		
@@ -27,8 +35,11 @@ public class Grid implements GridBag{
 
 	@Override
 	public GridBag atColumn(int column) {
-		// TODO Auto-generated method stub
-		return null;
+		this.constraints.gridx = column;
+		
+		Grid g = new Grid(constraints);
+		
+		return g;
 	}
 
 	@Override
@@ -45,8 +56,11 @@ public class Grid implements GridBag{
 
 	@Override
 	public GridBag alignment(int alignment) {
-		// TODO Auto-generated method stub
-		return null;
+		this.constraints.anchor = alignment;
+		
+		Grid g = new Grid(constraints);
+		
+		return g;
 	}
 
 	@Override

@@ -6,14 +6,28 @@ import javax.swing.JComponent;
 
 public interface GridBag {
 
-	int LEFT 	= 0;
+	static final int LEFT 	= GridBagConstraints.WEST;
 	
-	int RIGHT 	= 1;
+	static final int RIGHT 	= GridBagConstraints.EAST;
 	
-	int CENTER = 2;
+	static final int CENTER 	= GridBagConstraints.BOTH;
 
+	/**
+	 * Set line position on {@code GridBagConstraints} object.
+	 * 
+	 * @param line
+	 * 
+	 * @return
+	 */
 	GridBag atLine(int line);
 	
+	/**
+	 * Set column position on {@code GridBagConstraints} object.
+	 * 
+	 * @param column
+	 * 
+	 * @return
+	 */
 	GridBag atColumn(int column);
 	
 	GridBag colspan(int cols);

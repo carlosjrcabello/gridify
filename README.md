@@ -1,6 +1,8 @@
 gridify
 =======
 
+Working progress... :D
+
 Because GridBagLayout must be simple!
 ```
 public static void main(String[] args) {
@@ -14,3 +16,5 @@ public static void main(String[] args) {
 	grid.atColumn(0).atLine(0).alignment(GridBag.LEFT).add(bu, panel);
 }
 ```
+
+Will be bealtiful
