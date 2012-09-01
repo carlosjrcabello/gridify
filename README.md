@@ -1,9 +1,7 @@
 gridify
 =======
 
-Working progress... :D
-
-Because GridBagLayout must be simple!
+Because GridBagLayout must be simple and javax.swing less ugly!
 ```
 public static void main(String[] args) {
 	GridBag grid = new Grid();
@@ -38,4 +36,4 @@ public static void main(String[] args) {
 ```
 
 
-Will be bealtiful
+Will be bealtiful...great commits are comming 'tchê!'
