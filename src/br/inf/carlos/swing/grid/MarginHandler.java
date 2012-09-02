@@ -45,4 +45,9 @@ public class MarginHandler implements Margin{
 	public Gridify right(int right) {
 		return this.margin(0, 0, 0, right);
 	}
+
+	@Override
+	public Gridify same(int margin) {
+		return this.margin(margin, margin, margin, margin);
+	}
 }

@@ -35,7 +35,7 @@ public class TestesFeio {
 		c = new GridBagConstraints();
 		c.gridy 		= 1;
 		c.gridx 		= 1;
-		c.insets		= new Insets(10, 0, 0, 0);
+		c.insets		= new Insets(2, 2, 0, 0);
 		panel.add(new JLabel("Username: "), c);
 		
 		c = new GridBagConstraints();

@@ -48,25 +48,6 @@ public class GridifyHandler implements Gridify{
 	}
 
 	@Override
-	public Gridify atLine(int line) {
-		
-		this.constraints.gridy = line;
-		
-		GridifyHandler g = new GridifyHandler(constraints);
-		
-		return g;
-	}
-
-	@Override
-	public Gridify atColumn(int column) {
-		this.constraints.gridx = column;
-		
-		GridifyHandler g = new GridifyHandler(constraints);
-		
-		return g;
-	}
-
-	@Override
 	public Gridify colspan(int cols) {
 		this.constraints.gridwidth = cols;
 		
@@ -78,15 +59,6 @@ public class GridifyHandler implements Gridify{
 	@Override
 	public Gridify rowspan() {
 		this.constraints.gridheight = 3;//GridBagConstraints.RELATIVE;
-		
-		GridifyHandler g = new GridifyHandler(constraints);
-		
-		return g;
-	}
-
-	@Override
-	public Gridify alignment(int alignment) {
-		this.constraints.anchor = alignment;
 		
 		GridifyHandler g = new GridifyHandler(constraints);
 		
@@ -111,10 +83,17 @@ public class GridifyHandler implements Gridify{
 		if(element.equals(panel)){
 			throw new NullPointerException("The element could not be inserted at itself.");
 		}
-		
+		this.dumpConstraints(this.constraints);
 		panel.add(element, this.constraints);
 		
 		this.constraints = new GridBagConstraints();
+	}
+	
+	private void dumpConstraints(GridBagConstraints c){
+		System.out.println("c.gridx = " + c.gridx);
+		System.out.println("c.gridy = " + c.gridy);
+		System.out.println("c.fill = " + c.fill);
+		System.out.println("\n");
 	}
 
 	@Override
@@ -127,15 +106,6 @@ public class GridifyHandler implements Gridify{
 			i++;
 			this.constraints.gridx = i;
 		}
-	}
-
-	@Override
-	public Gridify fill() {
-		this.constraints.fill = GridBagConstraints.BOTH;
-		
-		GridifyHandler g = new GridifyHandler(constraints);
-		
-		return g;
 	}
 
 	@Override
@@ -152,5 +122,19 @@ public class GridifyHandler implements Gridify{
 		Margin margin = new MarginHandler(this);
 		
 		return margin;
+	}
+
+	@Override
+	public Grid grid() {
+		Grid grid = new GridHandler(this);
+		
+		return grid;
+	}
+
+	@Override
+	public Fill fill() {
+		Fill fill = new FillHandler(this);
+		
+		return fill;
 	}
 }

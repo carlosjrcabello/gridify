@@ -7,37 +7,19 @@ import javax.swing.JComponent;
 
 public interface Gridify {
 	
+	Fill fill();
+	
+	Grid grid();
+	
 	Align align();
 	
 	Margin margin();
 
 	@Deprecated
-	Gridify fill();
-
-	/**
-	 * Set line position on {@code GridBagConstraints} object.
-	 * 
-	 * @param line
-	 * 
-	 * @return
-	 */
-	Gridify atLine(int line);
-	
-	/**
-	 * Set column position on {@code GridBagConstraints} object.
-	 * 
-	 * @param column
-	 * 
-	 * @return
-	 */
-	Gridify atColumn(int column);
-	
 	Gridify colspan(int cols);
 	
-	Gridify rowspan();
-	
 	@Deprecated
-	Gridify alignment(int alignment);
+	Gridify rowspan();
 	
 	/**
 	 * Automatizes the {@code JComponent#add(java.awt.Component, Object)} using
@@ -51,6 +33,7 @@ public interface Gridify {
 	 */
 	void add(JComponent element, JComponent panel);
 	
+	@Deprecated
 	void add(Collection<JComponent> elements, JComponent panel);
 	
 	/**

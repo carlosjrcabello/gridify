@@ -7,6 +7,14 @@ package br.inf.carlos.swing.grid;
  * @author Carlos Alberto Junior Spohr Poletto.
  */
 public interface Margin {
+	
+	/**
+	 * Applies the same margin for all sides of component.
+	 * 
+	 * @param margin
+	 * @return
+	 */
+	Gridify same(int margin);
 
 	/**
 	 * Sets all margins values to target component.
