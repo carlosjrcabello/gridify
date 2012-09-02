@@ -1,4 +1,4 @@
-package br.inf.carlos.swing.grid;
+package br.inf.carlos.gridify;
 
 /**
  * Default interface to represent all methods in {@code AlignHandler}

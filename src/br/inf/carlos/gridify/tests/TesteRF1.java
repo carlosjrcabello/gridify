@@ -1,4 +1,4 @@
-package br.inf.carlos.swing.test.rf1;
+package br.inf.carlos.gridify.tests;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -15,8 +15,8 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import br.inf.carlos.swing.grid.Gridify;
-import br.inf.carlos.swing.grid.GridifyHandler;
+import br.inf.carlos.gridify.Gridify;
+import br.inf.carlos.gridify.GridifyHandler;
 
 public class TesteRF1 {
 

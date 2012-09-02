@@ -1,4 +1,4 @@
-package br.inf.carlos.swing.grid;
+package br.inf.carlos.gridify;
 
 /**
  * Default interface to represent all methods in {@code AlignHandler}
@@ -11,4 +11,8 @@ public interface Grid {
 	Gridify column(int column);
 	
 	Gridify line(int line);
+	
+	Gridify colspan(int cols);
+	
+	Gridify rowspan(int rows);
 }

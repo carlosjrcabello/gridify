@@ -1,4 +1,4 @@
-package br.inf.carlos.swing.test;
+package br.inf.carlos.gridify.tests;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;

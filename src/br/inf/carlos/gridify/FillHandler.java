@@ -1,4 +1,4 @@
-package br.inf.carlos.swing.grid;
+package br.inf.carlos.gridify;
 
 import java.awt.GridBagConstraints;
 
