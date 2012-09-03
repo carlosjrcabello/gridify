@@ -8,7 +8,7 @@ public class AlignHandler implements Align{
 	
 	private static final int RIGHT 			= GridBagConstraints.EAST;
 	
-	private static final int CENTER 			= GridBagConstraints.BOTH;
+	private static final int CENTER 			= GridBagConstraints.CENTER;
 	
 	private static final int NORTH 			= GridBagConstraints.NORTH;
 	

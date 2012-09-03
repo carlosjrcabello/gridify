@@ -50,4 +50,22 @@ public class GridHandler implements Grid{
 		
 		return this.gridify;
 	}
+
+	@Override
+	public Gridify width(double with) {
+		this.constraints.weightx = with;
+		
+		this.gridify.setGridBagConstraints(constraints);
+		
+		return this.gridify;
+	}
+
+	@Override
+	public Gridify height(double height) {
+		this.constraints.weighty = height;
+		
+		this.gridify.setGridBagConstraints(constraints);
+		
+		return this.gridify;
+	}
 }

@@ -8,99 +8,47 @@ import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import br.inf.carlos.gridify.Gridify;
 import br.inf.carlos.gridify.GridifyHandler;
 
-public class TesteRF1 {
+public class RowspanTest {
 
 	public static void main(String[] args) {
 		
 		JPanel panel = new JPanel(new GridBagLayout());
-		panel.setBorder(BorderFactory.createTitledBorder("Sample:"));
+		panel.setBorder(BorderFactory.createTitledBorder("Panel 1:"));
+		panel.setPreferredSize(new Dimension(200, 100));
 		
 		Gridify gridify = new GridifyHandler();
 		
 		gridify
 			.grid().line(0)
 			.grid().column(0)
-			.align().left()
-			.margin().left(10)
-			.add(new JLabel("Line 0 - Column 0: "), panel);
+			.align().right()
+			
+			.add(new JLabel("XY: 0,0"), panel);
 		
 		gridify
-		.grid().line(0)
-		.grid().column(1)
-		.align().left()
-		.margin().left(10)
-		.add(new JLabel("Line 0 - Column 1: "), panel);
+			.grid().line(0)
+			.grid().column(1)
+			.align().right()
+			
+			.add(new JLabel("XY: 1,0"), panel);
 		
-		final JTextArea text = new JTextArea(5, 20);
-		final JScrollPane pane = new JScrollPane(text);
-		
-		gridify
-		.grid().line(1)
-		.grid().column(0)
-		.align().left()
-		.fill().both()
-		.margin().same(5)
-		.add(pane, panel);
-		
-		final JTextField field = new JTextField(25);
-		
-		gridify
-		.grid().line(2)
-		.grid().column(0)
-		.align().left()
-		.fill().horizontal()
-		.margin().same(5)
-		.add(field, panel);
-		
-		gridify
-			.grid().line(3)
-			.grid().column(0)
-			.align().left()
-			.add(new JLabel("User: "), panel);
-		
-		gridify
-		.grid().line(3)
-		.grid().column(1)
-		.align().right()
-		.add(new JLabel("Password: "), panel);
-		
-		gridify
-		.grid().line(4)
-		.grid().column(0)
-		.fill().horizontal()
-		.add(new JTextField(), panel);
-		
-		gridify
-		.grid().line(4)
-		.grid().column(1)
-		.fill().horizontal()
-		.add(new JPasswordField(), panel);
+		final JPanel panel2 = new JPanel(new GridBagLayout());
+		panel2.setBorder(BorderFactory.createTitledBorder("Panel 2:"));
 		
 		
-		gridify
-		.grid().line(0)
-		.grid().column(0)
-		.align().right()
-		.margin().same(2)
-		.add(new JLabel("Username: "), panel);
+		JPanel container = new JPanel(new GridBagLayout());
 		
+		gridify.grid().line(0).grid().column(0).grid().width(.5)
+			.add(panel, container);
+		gridify.grid().line(0).grid().column(1).fill().both().add(panel2, container);
 		
-		gridify.grid();
-		gridify.align();
-		gridify.fill();
-		gridify.margin();
-		
-		runFrame(panel);
+		runFrame(container);
 	}
 	
 	static void runFrame(JPanel panel){

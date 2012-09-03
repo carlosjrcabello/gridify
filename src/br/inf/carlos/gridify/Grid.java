@@ -15,4 +15,8 @@ public interface Grid {
 	Gridify colspan(int cols);
 	
 	Gridify rowspan(int rows);
+	
+	Gridify width(double with);
+	
+	Gridify height(double height);
 }

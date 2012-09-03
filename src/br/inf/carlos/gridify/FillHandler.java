@@ -34,7 +34,7 @@ public class FillHandler implements Fill{
 	@Override
 	public Gridify both() {
 		this.constraints.fill = GridBagConstraints.BOTH;
-		this.constraints.gridwidth 	= GridBagConstraints.REMAINDER;
+		this.constraints.gridwidth 	= GridBagConstraints.RELATIVE;
 		this.constraints.weightx = 1.0;
 		this.constraints.weighty = 1.0;
 		this.gridify.setGridBagConstraints(constraints);

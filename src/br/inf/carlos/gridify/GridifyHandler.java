@@ -93,6 +93,7 @@ public class GridifyHandler implements Gridify{
 		System.out.println("c.gridx = " + c.gridx);
 		System.out.println("c.gridy = " + c.gridy);
 		System.out.println("c.fill = " + c.fill);
+		System.out.println("c.anchor = " + c.anchor);
 		System.out.println("\n");
 	}
 
