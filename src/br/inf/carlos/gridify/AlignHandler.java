@@ -113,4 +113,9 @@ public class AlignHandler implements Align{
 		
 		return this.gridify;
 	}
+
+	@Override
+	public Gridify label() {
+		return this.right();
+	}
 }

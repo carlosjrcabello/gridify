@@ -8,6 +8,8 @@ package br.inf.carlos.gridify;
  */
 public interface Align {
 	
+	Gridify label();
+	
 	/**
 	 * Aligns the current component to top centered.
 	 * 
